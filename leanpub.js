@@ -6,6 +6,10 @@
 // @version     1
 // @grant       none
 // ==/UserScript==
+// for greasemonkey you don't need DOMContentLoaded event coz
+// user scripts are executed afer DOM loaded
+// but for more general usage of this code, I added this event listener
+// feel free to remove it in your grasemonkey script
 document.addEventListener("DOMContentLoaded", function(event) { 
   console.log('Hello reader! Good good study, day day up!');
   // remove quick buy bar
