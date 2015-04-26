@@ -21,25 +21,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 function init(cb) {
   var radioButton = document.createElement('button');
   radioButton.class = 'my-radio';
-  radioButton.style.cssText = "float:left;margin:3px 3px 3px 15px";
+  radioButton.style.cssText = "margin:3px 3px 3px 15px";
   var b = document.createElement('b');
   b.innerHTML = '自选电台';
   radioButton.appendChild(b);
   radioButton.onclick = toggleRadioList;
   
-  var wrap = document.querySelector('.wrap');
-  var leftNav = [].filter.call(wrap.childNodes, function(node) {
-    return node.className === 'leftNav';
-  })[0];
-
-  var content = [].filter.call(leftNav.childNodes, function(node) {
-    return node.className === 'content';
-  })[0];
-
-  var ul = [].filter.call(content.childNodes, function(node) {
-    return node.tagName === 'UL';
-  })[0];
-
+  var ul = document.querySelector('.wrap > .leftNav > .content > ul');
   ul.appendChild(radioButton);
   
   cb(myRadio, ul);
@@ -48,13 +36,13 @@ function init(cb) {
 function initList(itemList, target) {
   var radioList = document.createElement('ul');
   radioList.className = 'radio-list';
-  radioList.style.cssText = "list-style-type:none;float:left;margin:3px;padding-left:10px;visibility:hidden";
+  radioList.style.cssText = "list-style-type:none;margin:3px;padding:0px 15px;visibility:hidden";
   Object.keys(itemList).forEach(function(key) {
     var li = document.createElement('li');
     var a = document.createElement('a');
     a.href = itemList[key];
     a.innerHTML = key;
-    a.style.cssText = "text-decoration:none";
+    a.style.cssText = "text-decoration:underline"
     li.appendChild(a);
     radioList.appendChild(li);
   });
