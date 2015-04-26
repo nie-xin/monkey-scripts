@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var target = document.body;
   var observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
-      console.log(mutation);
       addedNodeList = mutation.addedNodes;
       var filter = [].filter;
       var taxamoList = filter.call(addedNodeList, function(node) {
