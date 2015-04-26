@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var target = document.body;
   var observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
-      addedNodeList = mutation.addedNodes;
+      var addedNodeList = mutation.addedNodes;
       var filter = [].filter;
       var taxamoList = filter.call(addedNodeList, function(node) {
         return (node.id === 'taxamo-confirm-country-overlay');
