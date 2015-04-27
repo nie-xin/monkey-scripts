@@ -26,10 +26,10 @@ function init(cb) {
   b.innerHTML = '自选电台';
   radioButton.appendChild(b);
   radioButton.onclick = toggleRadioList;
-  
+
   var ul = document.querySelector('.wrap > .leftNav > .content > ul');
   ul.appendChild(radioButton);
-  
+
   cb(myRadio, ul);
 }
 
@@ -37,6 +37,8 @@ function initList(itemList, target) {
   var radioList = document.createElement('ul');
   radioList.className = 'radio-list';
   radioList.style.cssText = "list-style-type:none;margin:3px;padding:0px 15px;visibility:hidden";
+
+  var frag = document.createDocumentFragment();
   Object.keys(itemList).forEach(function(key) {
     var li = document.createElement('li');
     var a = document.createElement('a');
@@ -44,8 +46,9 @@ function initList(itemList, target) {
     a.innerHTML = key;
     a.style.cssText = "text-decoration:underline"
     li.appendChild(a);
-    radioList.appendChild(li);
+    frag.appendChild(li);
   });
+  radioList.appendChild(frag);
   target.appendChild(radioList);
 }
 
