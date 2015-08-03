@@ -33,6 +33,4 @@ document.addEventListener("DOMContentLoaded", function(event) {
       }
     });
   });
-  var config = { attributes: true, childList: true, characterData: true };
-  observer.observe(target, config);
-});
+})();

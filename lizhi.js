@@ -46,7 +46,7 @@
       var a = document.createElement('a');
       a.href = itemList[key];
       a.innerHTML = key;
-      a.style.cssText = "text-decoration:underline"
+      a.style.cssText = "text-decoration:underline";
       li.appendChild(a);
       frag.appendChild(li);
     });
