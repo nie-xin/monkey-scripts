@@ -9,6 +9,9 @@
 //
 // codepen: http://codepen.io/niexin/pen/PPJRLY
 // TODO: abstract style sheet insertRule method
+// Reference:
+// - http://davidwalsh.name/add-rules-stylesheets
+// - http://www.sitepoint.com/css3-toggle-switch/
 document.addEventListener("DOMContentLoaded", function(event) {
   var courseIndex = document.querySelector('.course-index');
 
